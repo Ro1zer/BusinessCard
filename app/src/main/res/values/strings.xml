@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="full_name">Joe Jonson</string>
+    <string name="desc">Trainee Android Developer</string>
+    <string name="phone_number">+38 (096) 11 11 111</string>
+    <string name="email">example@gmail.com</string>
+    <string name="git_hub_nickname">\@ro1zer</string>
+</resources>
