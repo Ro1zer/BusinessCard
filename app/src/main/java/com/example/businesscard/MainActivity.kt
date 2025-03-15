@@ -11,10 +11,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.AccountCircle
 import androidx.compose.material.icons.rounded.Email
@@ -31,12 +29,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.businesscard.ui.theme.BusinessCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -95,20 +90,20 @@ fun GeneralPanel(
         Text(
             text = fullName,
             textAlign = TextAlign.Center,
-            fontSize = 30.sp,
-            fontFamily = FontFamily.Serif,
-            color = MaterialTheme.colorScheme.inverseSurface,
-            modifier = Modifier.padding(top = 12.dp, bottom = 12.dp)
+            fontSize = MaterialTheme.typography.titleLarge.fontSize,
+            fontFamily = MaterialTheme.typography.titleLarge.fontFamily,
+            color = MaterialTheme.colorScheme.onSecondaryContainer,
+            modifier = Modifier.padding(top = 16.dp, bottom = 16.dp),
         )
         Text(
             text = description,
             textAlign = TextAlign.Center,
-            fontSize = 16.sp,
+            fontSize = MaterialTheme.typography.labelLarge.fontSize,
+            fontFamily = MaterialTheme.typography.labelLarge.fontFamily,
+            fontWeight = MaterialTheme.typography.labelLarge.fontWeight,
             color = MaterialTheme.colorScheme.onSecondaryContainer,
-            fontWeight = FontWeight.Bold,
         )
     }
-
 }
 
 @Composable
@@ -124,12 +119,12 @@ fun ContactPanel(
         ContactPlace(
             Icons.Rounded.Phone,
             phoneNumber,
-            Modifier.padding(bottom = 15.dp)
+            Modifier.padding(bottom = 16.dp)
         )
         ContactPlace(
             Icons.Rounded.Email,
             email,
-            Modifier.padding(bottom = 15.dp)
+            Modifier.padding(bottom = 16.dp)
         )
         ContactPlace(
             Icons.Rounded.AccountCircle,
@@ -156,12 +151,18 @@ fun ContactPlace(
         Icon(
             imageVector = icon,
             contentDescription = null,
-            modifier = Modifier.weight(1f)
+            modifier = Modifier.weight(1f),
+            tint = MaterialTheme.colorScheme.onSecondaryContainer
         )
         Text(
             text = value,
             textAlign = TextAlign.Left,
-            modifier = Modifier.weight(4f),
+            fontSize = MaterialTheme.typography.labelSmall.fontSize,
+            fontFamily = MaterialTheme.typography.labelSmall.fontFamily,
+            fontWeight = MaterialTheme.typography.labelSmall.fontWeight,
+            color = MaterialTheme.colorScheme.onSecondaryContainer,
+            modifier = Modifier
+                .weight(3f)
         )
     }
 }
